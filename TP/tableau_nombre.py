@@ -13,7 +13,7 @@ def average(tab):
 
 # 2.Nombre d'occurence
 def occurence_count(tab, searched):
-    return my_tab.count(searched)
+    return tab.count(searched)
 
 
 # 3.Nombre d'element superieurs ou egaux a 10
@@ -34,7 +34,7 @@ def element_is_in(tab, element):
 # b.fonction pour taille n
 # 1.Tableau aleatoire
 def random_int_tab(n: int):
-    return [random.randint(1, 100) for _ in range(n)]
+    return [i for i in range(n)]
 
 
 # 2.tableau premiers entier mélangé
@@ -46,14 +46,14 @@ def first_int_shuffled(n: int):
 
 # 3.Calcul du temps
 # Moyenne
-random_tab = first_int_shuffled(999999)
-print(len(random_tab))
-moyenne_time = time.time()
-average(random_tab)
-print(f"Temps pour la fonction moyenne: {time.time() - moyenne_time}")
-
-# Chercher élement
-recherche_time = time.time()
-element_is_in(random_tab, 5)
-print(f"Temps pour la fonction recherche d'element: {time.time() - recherche_time}")
+# random_tab = first_int_shuffled(999999)
+# print(len(random_tab))
+# moyenne_time = time.time()
+# average(random_tab)
+# print(f"Temps pour la fonction moyenne: {time.time() - moyenne_time}")
+#
+# # Chercher élement
+# recherche_time = time.time()
+# element_is_in(random_tab, 5)
+# print(f"Temps pour la fonction recherche d'element: {time.time() - recherche_time}")
 

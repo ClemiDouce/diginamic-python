@@ -1,25 +1,27 @@
 # 1.1
-from
+import copy
+
+from tableau_nombre import first_int_shuffled
 
 
-def index_minimum(t, d, f):
-    extrait = t[d:f]
-    minimum = min(extrait)
-    return t.index(minimum)
+def index_minimum(tab):
+    # extrait = tab[debut:fin]
+    minimum = min(tab)
+    return tab.index(minimum)
 
 
 # 1.2 Tri a bulle
-def bubble_parse(t):
-    n = len(t)
+def tri_bulles(tab):
+    n = len(tab)
     for i in range(n):
         for j in range(0, n - i - 1):
-            if t[j] > t[j + 1]:
-                t[j], t[j + 1] = t[j + 1], t[j]
+            if tab[j] > tab[j + 1]:
+                tab[j], tab[j + 1] = tab[j + 1], tab[j]
 
 
-new_tab = [10, 90, 20, 34, 87, 17, 29, 40]
-
-bubble_parse(new_tab)
+# new_tab = [10, 90, 20, 34, 87, 17, 29, 40]
+#
+# bubble_parse(new_tab)
 
 
 # 2.1
@@ -27,6 +29,7 @@ def recherche_tant_que():
     pass
 
 
+# 2.2
 def recherche_dycho(tab, a):
     begin, end = 0, len(tab)
     while begin <= end:
@@ -42,4 +45,33 @@ def recherche_dycho(tab, a):
     return False
 
 
-print(recherche_dycho(new_tab, 40))
+# my_tab = first_int_shuffled(1000)
+# bubble_parse(my_tab)
+# print(recherche_dycho(my_tab, 40))
+
+# 3.
+def tri_extraction(tab):
+    copy_tab = copy.copy(tab)
+    result = []
+    for i in range(len(tab)):
+        index_mini = index_minimum(copy_tab)
+        elem = copy_tab[index_mini]
+        result.append(elem)
+        copy_tab.remove(elem)
+    return result
+
+
+def tri_insertion(tab):
+    for i in range(1, len(tab) - 1):
+        x = tab[i]
+        j = i
+        while j > 0 and tab[j - 1] > x:
+            tab[j] = tab[j - 1]
+            j = j - 1
+        tab[j] = x
+
+
+my_tab = first_int_shuffled(100)
+# tri_insertion(my_tab)
+new_tab = tri_extraction(my_tab)
+# print(new_tab)
