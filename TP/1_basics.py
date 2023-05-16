@@ -1,4 +1,5 @@
 import random
+import turtle
 
 # I
 # 1. Affichage
