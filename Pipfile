@@ -6,6 +6,11 @@ name = "pypi"
 [packages]
 wonderwords = "*"
 pyperclip = "*"
+pynsee = "*"
+pandas = "*"
+xlrd = "*"
+matplotlib = "*"
+selenium = "*"
 
 [dev-packages]
 
